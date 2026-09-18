@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blossom Luxe — Find Your Signature Scent</title>
+<meta name="description" content="Blossom Luxe is a luxury fragrance house. Discover perfumes, perfume oils, body mists, and gift sets crafted for every mood, moment, and memory.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="#top" class="logo">Blossom <span>Luxe</span></a>
+
+    <nav class="main-nav" id="main-nav">
+      <a href="#top">Home</a>
+      <a href="#shop">Shop</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-btn" id="search-trigger" aria-label="Search products">
+        <svg viewBox="0 0 24 24" width="20" height="20"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      </button>
+      <button class="icon-btn cart-trigger" id="cart-trigger" aria-label="Open cart" aria-haspopup="dialog">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path d="M3 3h2l2.6 13.2a2 2 0 0 0 2 1.6h8.8a2 2 0 0 0 2-1.6L22 7H6"></path><circle cx="9" cy="21" r="1.4"></circle><circle cx="18" cy="21" r="1.4"></circle></svg>
+        <span class="cart-count" id="cart-count">0</span>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <p class="hero-kicker">Blossom Luxe</p>
+        <h1>Find Your<br>Signature Scent.</h1>
+        <p class="hero-sub">Luxury fragrances designed to leave a lasting impression.</p>
+        <a href="#shop" class="btn btn-primary" id="hero-cta">Shop Collection</a>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <svg viewBox="0 0 260 340" class="bottle-art">
+          <rect x="95" y="18" width="70" height="34" rx="6" fill="#C6A15B"/>
+          <rect x="108" y="4" width="44" height="20" rx="4" fill="#221D1B"/>
+          <rect x="55" y="52" width="150" height="270" rx="18" fill="#6E1423"/>
+          <rect x="55" y="52" width="150" height="270" rx="18" fill="url(#fade)"/>
+          <rect x="72" y="96" width="116" height="150" rx="4" fill="#FAF7F2" opacity="0.08"/>
+          <text x="130" y="180" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="22" fill="#F1E8DC" font-style="italic">Blossom</text>
+          <text x="130" y="204" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="14" fill="#C6A15B" letter-spacing="2">L U X E</text>
+          <defs>
+            <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#ffffff" stop-opacity="0.06"/>
+              <stop offset="1" stop-color="#000000" stop-opacity="0.12"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SHOP / PRODUCTS ============ -->
+  <section class="shop-section" id="shop">
+    <div class="section-head">
+      <h2>The Blossom Collection</h2>
+      <p>Discover fragrances made for every mood, moment, and memory.</p>
+    </div>
+
+    <div class="shop-controls">
+      <div class="filter-pills" id="filter-pills" role="group" aria-label="Filter by category">
+        <button class="pill active" data-filter="all">All</button>
+        <button class="pill" data-filter="Perfume">Perfume</button>
+        <button class="pill" data-filter="Perfume Oil">Perfume Oil</button>
+        <button class="pill" data-filter="Body Mist">Body Mist</button>
+        <button class="pill" data-filter="Gift Sets">Gift Sets</button>
+      </div>
+
+      <div class="controls-right">
+        <div class="search-field">
+          <svg viewBox="0 0 24 24" width="16" height="16"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="text" id="product-search" placeholder="Search fragrances…" autocomplete="off">
+        </div>
+        <label class="sort-field">
+          <span>Sort by</span>
+          <select id="sort-select">
+            <option value="featured">Featured</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="rating-desc">Highest Rated</option>
+          </select>
+        </label>
+      </div>
+    </div>
+
+    <div class="product-grid" id="product-grid"></div>
+    <p class="no-results" id="no-results" hidden>No fragrances match your search. Try a different name or category.</p>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="about-section" id="about">
+    <div class="about-inner">
+      <div class="about-visual" aria-hidden="true"></div>
+      <div class="about-copy">
+        <h2>Crafted, not mass-produced.</h2>
+        <p>Blossom Luxe blends rare florals, warm ambers, and quiet woods into fragrances meant to be worn like a second skin. Every bottle is finished by hand in small batches, so what you wear is closer to a signature than a scent off a shelf.</p>
+        <p>We work with independent perfumers across three continents, sourcing ingredients we can trace back to the farm or forest they came from.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="contact-section" id="contact">
+    <div class="contact-inner">
+      <h2>Visit or write to us</h2>
+      <div class="contact-grid">
+        <div>
+          <h3>Boutique</h3>
+          <p>14 Adeola Odeku Street<br>Victoria Island, Lagos</p>
+        </div>
+        <div>
+          <h3>Hours</h3>
+          <p>Mon – Sat, 10am – 7pm<br>Sundays by appointment</p>
+        </div>
+        <div>
+          <h3>Reach us</h3>
+          <p><a href="mailto:hello@blossomluxe.com">hello@blossomluxe.com</a><br><a href="tel:+2348000000000">+234 800 000 0000</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <p class="footer-logo">Blossom Luxe</p>
+      <p class="footer-tagline">Your scent. Your signature.</p>
+    </div>
+    <nav class="footer-links" aria-label="Footer">
+      <a href="#shop">Shop</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="footer-social" aria-label="Social media">
+      <a href="#" aria-label="Blossom Luxe on Instagram">Instagram</a>
+      <a href="#" aria-label="Blossom Luxe on TikTok">TikTok</a>
+      <a href="#" aria-label="Message Blossom Luxe on WhatsApp">WhatsApp</a>
+    </div>
+  </div>
+  <p class="footer-copyright">© <span id="footer-year"></span> Blossom Luxe. All rights reserved.</p>
+</footer>
+
+<!-- ============ CART DRAWER ============ -->
+<div class="drawer-overlay" id="cart-overlay"></div>
+<aside class="cart-drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-label="Shopping cart" tabindex="-1">
+  <div class="drawer-head">
+    <h2>Your Cart</h2>
+    <button class="icon-btn" id="cart-close" aria-label="Close cart">
+      <svg viewBox="0 0 24 24" width="18" height="18"><line x1="5" y1="5" x2="19" y2="19"></line><line x1="19" y1="5" x2="5" y2="19"></line></svg>
+    </button>
+  </div>
+
+  <div class="drawer-items" id="drawer-items">
+    <!-- cart items injected here -->
+  </div>
+
+  <div class="drawer-empty" id="drawer-empty" hidden>
+    <p>Your cart is empty.</p>
+    <a href="#shop" id="drawer-empty-link" class="btn btn-secondary">Browse the collection</a>
+  </div>
+
+  <div class="drawer-footer" id="drawer-footer">
+    <div class="drawer-total">
+      <span>Total</span>
+      <strong id="cart-total">₦0</strong>
+    </div>
+    <button class="btn btn-primary btn-block" id="checkout-btn">Checkout</button>
+  </div>
+</aside>
+
+<!-- ============ CHECKOUT MODAL ============ -->
+<div class="modal-overlay" id="checkout-overlay">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="checkout-title" tabindex="-1">
+    <button class="icon-btn modal-close" id="checkout-close" aria-label="Close checkout">
+      <svg viewBox="0 0 24 24" width="18" height="18"><line x1="5" y1="5" x2="19" y2="19"></line><line x1="19" y1="5" x2="5" y2="19"></line></svg>
+    </button>
+
+    <div id="checkout-form-view">
+      <h2 id="checkout-title">Ready to place your order?</h2>
+      <p class="modal-note">This is a demo checkout experience for Blossom Luxe.</p>
+
+      <form id="checkout-form" novalidate>
+        <div class="form-field">
+          <label for="cf-name">Full name</label>
+          <input type="text" id="cf-name" name="name" autocomplete="name">
+          <span class="field-error" id="err-name"></span>
+        </div>
+        <div class="form-field">
+          <label for="cf-email">Email</label>
+          <input type="email" id="cf-email" name="email" autocomplete="email">
+          <span class="field-error" id="err-email"></span>
+        </div>
+        <div class="form-field">
+          <label for="cf-phone">Phone number</label>
+          <input type="tel" id="cf-phone" name="phone" autocomplete="tel">
+          <span class="field-error" id="err-phone"></span>
+        </div>
+        <div class="form-field">
+          <label for="cf-address">Delivery address</label>
+          <textarea id="cf-address" name="address" rows="3"></textarea>
+          <span class="field-error" id="err-address"></span>
+        </div>
+
+        <div class="modal-order-total">
+          <span>Order total</span>
+          <strong id="modal-total">₦0</strong>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Place demo order</button>
+      </form>
+    </div>
+
+    <div id="checkout-success-view" hidden>
+      <div class="success-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="30" height="30"><polyline points="4,13 9,18 20,6"></polyline></svg>
+      </div>
+      <h2>Thank you for shopping with Blossom Luxe!</h2>
+      <p class="modal-note">Your demo order has been received. This project does not process real payments or orders.</p>
+      <button class="btn btn-secondary btn-block" id="checkout-done">Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ QUICK VIEW MODAL ============ -->
+<div class="modal-overlay" id="quickview-overlay">
+  <div class="modal modal-quickview" role="dialog" aria-modal="true" aria-labelledby="qv-title" tabindex="-1">
+    <button class="icon-btn modal-close" id="quickview-close" aria-label="Close product details">
+      <svg viewBox="0 0 24 24" width="18" height="18"><line x1="5" y1="5" x2="19" y2="19"></line><line x1="19" y1="5" x2="5" y2="19"></line></svg>
+    </button>
+    <div class="quickview-body" id="quickview-body">
+      <!-- injected by JS -->
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
